@@ -33,6 +33,7 @@ module SpreeDhlShippingLabeler
       req_options = { use_ssl: true }
       request.body = config_body_label
       response = get_response(request)
+      result = response, request
     end
 
     def get_response(request)
@@ -45,7 +46,8 @@ module SpreeDhlShippingLabeler
       {
         labelId: SecureRandom.uuid,
         labelFormat: 'pdf',
-        orderReference: 'myReference',
+        orderReference: package.order_number,
+        orderId:        package.order_number,
         parcelTypeKey: 'SMALL',
         receiver: {
           name: {
@@ -78,7 +80,7 @@ module SpreeDhlShippingLabeler
             postalCode: shipper[:postalCode],
             city: shipper[:city],
             street: shipper[:street],
-            number: shipper[:number],
+            number: shipper[:number] || '',
             isBusiness: true,
             addition: 'A'
           },
@@ -87,15 +89,15 @@ module SpreeDhlShippingLabeler
           vatNumber: shipper[:vatNumber]
         },
         accountId: credentials[accountId],
-        options: [
-          {
-            key: 'DOOR'
-          }
+        options: [ # Preguntar por las opciones
+          { key: 'DOOR' },
+          { key: 'REFERENCE', input: 'text1234' },
+          { key: 'INS'      , input: 12.34 },
+          { key: 'COD_CASH' , input: 56.78 }
         ],
-        returnLabel: false,
+        isReturnShipment: false,
         pieceNumber: 1,
         quantity: 1,
-        automaticPrintDialog: true,
         application: 'string',
         userId: credentials[:userId]
       }.to_json
