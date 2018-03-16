@@ -8,7 +8,7 @@ module SpreeDhlShippingLabeler
     def self.config params
       requires!(params, :userId,
                         :key,
-                        :account)
+                        :accountId)
       @params = params
     end
 
