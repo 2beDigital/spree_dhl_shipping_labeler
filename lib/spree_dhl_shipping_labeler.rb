@@ -1,5 +1,4 @@
+require 'spree_core'
 require "spree_dhl_shipping_labeler/version"
-
-module SpreeDhlShippingLabeler
-  # Your code goes here...
-end
+require 'spree_dhl_shipping_labeler/engine'
+require 'spree_dhl_shipping_labeler/dhl_conection'

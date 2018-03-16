@@ -1,0 +1,18 @@
+common: &test_environment_settings
+  userId:        'a1b2c3a1-dbd9-4d1e-9fea-f898e5157559'
+  key:           '123456c7-c564-4163-92f1-cbe20356f77f'
+  accountId:     '123456789'
+
+production:
+  userId:        'a1b2c3a1-dbd9-4d1e-9fea-f898e5157559'
+  key:           '123456c7-c564-4163-92f1-cbe20356f77f'
+  accountId:     '123456789'
+
+development:
+  <<: *test_environment_settings
+
+staging:
+  <<: *test_environment_settings
+
+test:
+<<: *test_environment_settings
