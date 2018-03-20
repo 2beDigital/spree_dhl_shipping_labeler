@@ -14,13 +14,13 @@ module SpreeDhlShippingLabeler
     end
 
     def get_access_token
+      byebug
       uri = URI.parse('https://api-gw-accept.dhlparcel.nl/authenticate/api-key')
       request = Net::HTTP::Post.new(uri)
       request['accept'] = 'application/json'
       request.body = { userId: credentials[:userId], key: credentials[:key] }.to_json
       request.set_content_type('application/json')
-      req_options = { use_ssl: true }
-      response =  get_response(request)
+      response =  get_response(request, uri)
       return JSON.parse(response.body)['accessToken']
     end
 
@@ -30,13 +30,13 @@ module SpreeDhlShippingLabeler
       request['accept'] = 'application/json'
       request['Authorization'] = access_token
       request.set_content_type('application/json')
-      req_options = { use_ssl: true }
       request.body = config_body_label
-      response = get_response(request)
+      response = get_response(request, uri)
       result = response, request
     end
 
-    def get_response(request)
+    def get_response(request, uri)
+      req_options = { use_ssl: true }
       Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
         http.request(request)
       end
@@ -88,7 +88,7 @@ module SpreeDhlShippingLabeler
           phoneNumber: shipper[:phoneNumber],
           vatNumber: shipper[:vatNumber]
         },
-        accountId: credentials[accountId],
+        accountId: credentials[:accountId],
         options: [ # Preguntar por las opciones
           { key: 'DOOR' },
           { key: 'REFERENCE', input: 'text1234' },
