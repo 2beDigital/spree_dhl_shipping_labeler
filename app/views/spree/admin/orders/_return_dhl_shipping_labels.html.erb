@@ -1,0 +1,36 @@
+<% if flash[:error] %>
+  <div class="flash error"><%= flash[:error] %></div>
+<% elsif flash[:success] %>
+  <div class="flash success"><%= flash[:success] %></div>
+<% end %>
+
+<% if has_dhl_shipments? %>
+  <fieldset class='no-border-bottom'>
+    <legend><%= Spree.t(:dhl_shipping_labels) %></legend>
+
+    <% @order.shipments.each do |shipment| %>
+      <h6 class='shipment-number'><%= Spree.t(:shipment) + ' ' +  shipment.number %></h6>
+      <ul style='list-style: none'>
+        <% if shipment.dhl_label %>
+          <li>
+          <%= Spree.t(:label, number: shipment.number, created: distance_of_time_in_words_to_now(shipment.dhl_label.created_at)) %>
+          <%= link_to Spree.t(:print), admin_order_dhl_label_path(@order, shipment, shipment.dhl_label, format: :pdf), class: 'button fa fa-file-pdf-o' %>
+          </li>
+        <% else %>
+          <li><%= Spree.t(:no_shipping_labels_for, number: shipment.number, state: Spree.t(shipment.state) ) %></li>
+        <% end %>
+      </ul>
+      <br/>
+      <% if shipment.state != 'shipped' && shipment.state != 'pending' %>
+        <%= form_tag generate_dhl_label_api_order_shipment_path(@order, shipment), url:  generate_dhl_label_api_order_shipment_path(@order, shipment), method: :post, id: 'dhl-label-button' do |label_form| %>
+          <%= hidden_field_tag :token, spree_current_user.spree_api_key %>
+          <%= submit_tag Spree.t(:generate_new_label) %>
+        <% end %>
+        <br/>
+      <% end %>
+    <% end %>
+  </fieldset>
+<% end %>
+
+               
+  
