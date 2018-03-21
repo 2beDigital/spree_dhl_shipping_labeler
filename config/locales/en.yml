@@ -1,0 +1,25 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  spree:
+    company_cif: 'B-XXXXXXXXX'
+    company_lastname: ''
+    generate_new_label: "Generate New Label"
+    order_number: "Order Number"
+    dhl_shipping_labels: "Dhl Shipping Labels"
+    no_shipping_labels_for: "No shipping labels for: %{number}. Shipment state => %{state}  "
+    ready: Listo
+    pending: Pendiente
+    shipped: Enviado
+    print: Print
+    spree_shipping_box_id: "Shipping Box Type: "
+    bundle_number: "Number of bundles"
+    label: "Label - %{number}: %{created} ago"
+    label_error: "An error has occurred when create the label."
+    label_success: "The label %{number} was created successfully."
+    label_reload_success: "The label %{number} has already been created."
+    your_order_status: 'Your order status: '
+    delivery_by: 'Delivery by'
+    delivery_company: 'Courier company'
+    tracker_code: 'Tracker Code'

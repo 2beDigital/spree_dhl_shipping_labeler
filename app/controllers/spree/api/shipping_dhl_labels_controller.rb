@@ -9,12 +9,12 @@ module Spree
           @label = @shipment.build_dhl_label
           @label.generate_label!  
           if @label.save
-            flash[:success] = Spree.t(:label_success, number: @label.tracking_number)
+            flash[:success] = Spree.t(:label_success, number: @label.tracker_code)
           else
             flash[:error] = Spree.t(:label_error)        
           end
         else
-          flash[:success] = Spree.t(:label_reload_success, number: @label.tracking_number)
+          flash[:success] = Spree.t(:label_reload_success, number: @label.tracker_code)
         end
         redirect_to edit_admin_order_url(@order)
       end
@@ -27,12 +27,7 @@ module Spree
 
         def find_shipment
           @shipment = @order.shipments.find_by(number: params[:id])
-        end
-
-        def find_label
-          @label = @shipment.dhl_label
-        end
-        
+        end        
     end
   end
 end
