@@ -9,9 +9,9 @@ en:
     order_number: "Order Number"
     dhl_shipping_labels: "Dhl Shipping Labels"
     no_shipping_labels_for: "No shipping labels for: %{number}. Shipment state => %{state}  "
-    ready: Listo
-    pending: Pendiente
-    shipped: Enviado
+    ready: Ready
+    pending: Pending
+    shipped: Shipped
     print: Print
     spree_shipping_box_id: "Shipping Box Type: "
     bundle_number: "Number of bundles"
