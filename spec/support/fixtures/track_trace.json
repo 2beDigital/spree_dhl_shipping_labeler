@@ -1,0 +1,29 @@
+{
+  "id": "5ab4c943e4707c1f5cc935h8",
+  "barcode": "JVGL280326947920112799567",
+  "date": "2018-03-23T09:30:18.000Z",
+  "events": [
+    {
+      "category": "LEG",
+      "leg": {
+        "accountId": "59572123",
+        "network": "ECOMMERCE"
+      },
+      "localTimestamp": "2018-03-23T10:30:18.000+01:00",
+      "status": "LEG_CREATED",
+      "timestamp": "2018-03-23T09:30:18.000Z",
+      "type": "LEG_EVENT"
+    },
+    {
+      "category": "DATA_RECEIVED",
+      "localTimestamp": "2018-03-23T10:30:18.000+01:00",
+      "leg": {
+        "network": "ECOMMERCE"
+      },
+      "status": "DATA_RECEIVED_WITH_PREFIX_LABEL",
+      "timestamp": "2018-03-23T09:30:18.000Z",
+      "type": "PIECE_EVENT"
+    }
+  ],
+  "type": "SHIPMENT"
+}
