@@ -19,7 +19,7 @@ module SpreeDhlShippingLabeler
       request.body = { userId: credentials[:userId], key: credentials[:key] }.to_json
       request.content_type = 'application/json'
       response =  get_response(request, uri)
-      return JSON.parse(response.body)['accessToken']
+      return (response.code == '200' || response.code == '201') ? JSON.parse(response.body)['accessToken'] : response.code
     end
 
     def generate_label
@@ -30,7 +30,11 @@ module SpreeDhlShippingLabeler
       request.content_type = 'application/json'
       request.body = config_body_label
       response = get_response(request, uri)
-      result = response, request
+      if response.code == '200' || response.code == '201'
+        return [response, request, { :success => true }]
+      else
+        return [nil, nil, { :error => response.code }]
+      end
     end
 
     def get_response(request, uri)

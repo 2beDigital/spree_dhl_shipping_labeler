@@ -15,3 +15,10 @@ es:
     label_success: "La etiqueta %{number} se ha creado correctamente."
     label_reload_success: "La etiqueta %{number} ya ha sido creada."
     tracker_code: 'Numero de seguimiento: '
+    generate_label_errors:
+      code_201: 'Crea una etiqueta. Dependiendo del valor del encabezado Aceptado provisto, los datos de la etiqueta como JSON (en caso de aplicación/json), la etiqueta en formato PDF (en caso de aplicación/pdf), o la etiqueta en formato ZPL (en caso de aplicación/zpl). '
+      code_400: 'Error de validación de especificación de etiqueta. Compruebe los datos del cliente y de la localización del almacen.'
+      code_401: 'No se proporcionó ninguna autorización o la autorización no es un JWT válido.'
+      code_403: 'La autorización proporcionada no permite al usuario crear etiquetas'
+      code_406: 'No se puede proporcionar el rango de medios de solicitud. Solo application/json y application/pdf son compatibles.'
+      code_409: 'Ya existe una etiqueta con el LabelId proporcionado.'

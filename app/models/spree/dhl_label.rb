@@ -11,11 +11,15 @@ module Spree
     end
 
     def generate_label!
-      _response, _request = get_response.generate_label!
-      self.response = _response
-      self.request  = _request
-      self.tracker_code = JSON.parse(response.body)['trackerCode']
-      self.label = JSON.parse(response.body)['pdf']
+      _response, _request, message = get_response.generate_label!
+      if message[:error].present?
+        errors.add(:generate_label, message[:error])
+      else
+        self.response = _response
+        self.request  = _request
+        self.tracker_code = JSON.parse(response.body)['trackerCode']
+        self.label = JSON.parse(response.body)['pdf']
+      end
     end
 
     def get_response

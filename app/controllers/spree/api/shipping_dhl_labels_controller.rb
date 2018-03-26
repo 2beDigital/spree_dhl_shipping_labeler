@@ -7,11 +7,12 @@ module Spree
       def generate_dhl_label        
         if @shipment.state != 'shipped'
           @label = @shipment.build_dhl_label
-          @label.generate_label!  
+          @label.generate_label!
+          errors = @label.errors.messages[:generate_label].present? ? @label.errors.messages[:generate_label].first : nil
           if @label.save
             flash[:success] = Spree.t(:label_success, number: @label.tracker_code)
           else
-            flash[:error] = Spree.t(:label_error)        
+            flash[:error] = Spree.t('generate_label_errors.code_' + errors)
           end
         else
           flash[:success] = Spree.t(:label_reload_success, number: @label.tracker_code)

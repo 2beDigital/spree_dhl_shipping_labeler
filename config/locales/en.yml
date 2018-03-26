@@ -23,3 +23,10 @@ en:
     delivery_by: 'Delivery by'
     delivery_company: 'Courier company'
     tracker_code: 'Tracker Code'
+    generate_label_errors:
+      code_201: 'Create a label. Depending on the provided Accept header value, the label data as JSON(in case of application/json), the label in PDF format(in case of application/pdf), or the label in ZPL format(in case of application/zpl).'
+      code_400: 'Label specification validation error. Check customer data and stock location'
+      code_401: 'No authorization provided or the authorization is not a valid JWT'
+      code_403: 'The provided authorization does not allow the user to create labels'
+      code_406: 'Request media range cannot be provided. Only application/json and application/pdf are supported.'
+      code_409: 'There already exists a label with the provided LabelId.'
