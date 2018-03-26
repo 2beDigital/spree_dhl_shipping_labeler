@@ -1,8 +1,6 @@
-require 'spree_dhl_shipping_labeler/dhl_helper'
-
 module SpreeDhlShippingLabeler
   class DhlConection
-    include DhlHelper
+
     attr_accessor :params
 
     def self.config params

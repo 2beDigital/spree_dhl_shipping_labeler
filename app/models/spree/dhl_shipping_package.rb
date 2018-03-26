@@ -1,6 +1,6 @@
 module Spree
   class DhlShippingPackage
-    attr_reader :shipment, :order, :seur_label
+    attr_reader :shipment, :order, :dhl_label
 
     def initialize(label)
       @dhl_label = label
@@ -13,12 +13,8 @@ module Spree
       order.number
     end
 
-    def shipment_number
-      shipment.number
-    end
-
     def formatted_destination
-      shipment.address.dhl_formatted(order.email)
+      order.bill_address.dhl_formatted(order.email)
     end
 
     def formatted_origin

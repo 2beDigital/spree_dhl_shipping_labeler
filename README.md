@@ -24,9 +24,12 @@ Or install it yourself as:
 ```
 
 
-## Development
+## Test
+Testing with Rspec
 
-This gem is in development... Will be ready soon
+```shell
+    $ rspec spec
+```
 
 ## Contributing
 
