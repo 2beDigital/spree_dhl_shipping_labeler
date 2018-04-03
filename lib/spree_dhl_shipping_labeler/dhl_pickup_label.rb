@@ -39,7 +39,7 @@ module SpreeDhlShippingLabeler
 
     def get_response(request, uri)
       req_options = {
-        use_ssl: uri.scheme == "https",
+        use_ssl: uri.scheme == "https"
       }
       Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
         http.request(request)
@@ -52,7 +52,7 @@ module SpreeDhlShippingLabeler
         labelFormat: 'pdf',
         orderReference: package.order_number,
         orderId:        package.order_number,
-        parcelTypeKey: 'SMALL',
+        parcelTypeKey:  package.box.present? ? package.box.description : 'SMALL',
         receiver: {
           name: {
             firstName: customer[:firstName] ,
@@ -93,9 +93,7 @@ module SpreeDhlShippingLabeler
         accountId: credentials[:accountId],
         options: [ # Preguntar por las opciones
           { key: 'DOOR' },
-          { key: 'REFERENCE', input: 'text1234' },
-          { key: 'INS'      , input: 12.34 },
-          { key: 'COD_CASH' , input: 56.78 }
+          { key: 'REFERENCE', input: package.shipment_number }
         ],
         isReturnShipment: false,
         pieceNumber: 1,

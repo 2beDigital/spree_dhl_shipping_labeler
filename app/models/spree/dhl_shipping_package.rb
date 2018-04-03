@@ -13,6 +13,14 @@ module Spree
       order.number
     end
 
+    def box
+      dhl_label.shipping_dhl_box
+    end
+
+    def shipment_number
+      shipment.number
+    end
+
     def formatted_destination
       order.bill_address.dhl_formatted(order.email)
     end
