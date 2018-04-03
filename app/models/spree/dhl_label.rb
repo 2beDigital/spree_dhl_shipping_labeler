@@ -1,6 +1,7 @@
 module Spree
   class DhlLabel < ActiveRecord::Base
     belongs_to :shipment    
+    belongs_to :shipping_dhl_box, class_name: 'Spree::Shipping::DhlBox', foreign_key: 'spree_shipping_dhl_box_id'
     has_one :order, through: :shipment
     default_scope { order "created_at desc" }
     validates :tracker_code, presence: true 
@@ -24,6 +25,15 @@ module Spree
 
     def get_response
       Spree::DhlShippingPackage.new(self)
+    end
+
+    def get_shipment_status   
+      _response, message = SpreeDhlShippingLabeler::DhlTrackerTrace.shipment_status(self.tracker_code)
+      if message[:error].present?
+        errors.add(:shipment_status, message[:error])
+      else
+        return JSON.parse(_response.body,:symbolize_names => true)
+      end
     end
   end
 end

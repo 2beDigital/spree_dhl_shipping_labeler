@@ -1,0 +1,23 @@
+<% if @delivery.present? %>
+    <h6><%= Spree.t(:your_delivery_status) %></h6><br/>
+    <table class="index" id='delivery-status'>
+        <thead>
+          <tr>
+            <th><%= Spree.t(:date_of_event) %></th>
+            <th><%= Spree.t(:tracker_code) %></th>
+            <th><%= Spree.t(:delivery_events) %></th>
+            <th><%= Spree.t(:delivery_status) %></th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @delivery.first[:events].each do |event| %>
+          <tr>
+            <td><%= event[:timestamp].to_time %></td>
+            <td><%= @delivery.first[:barcode] %></td>
+            <td><%= Spree.t('tracker_trace_category.' + event[:category]) %></td>
+            <td><%= Spree.t('tracker_trace_status.' + event[:status])  %></td>
+          </tr>
+        <% end %>   
+        </tbody>
+    </table>
+<% end %>

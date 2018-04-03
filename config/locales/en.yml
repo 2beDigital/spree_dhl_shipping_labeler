@@ -19,10 +19,15 @@ en:
     label_error: "An error has occurred when create the label."
     label_success: "The label %{number} was created successfully."
     label_reload_success: "The label %{number} has already been created."
-    your_order_status: 'Your order status: '
+    show_delivery_status: Show delivery status
+    show_delivery: Show delivery
+    your_delivery_status: 'Your delivery status: '
     delivery_by: 'Delivery by'
     delivery_company: 'Courier company'
     tracker_code: 'Tracker Code'
+    delivery_events: Delivery events
+    delivery_status: Delivery status
+    date_of_event: Date of event
     generate_label_errors:
       code_201: 'Create a label. Depending on the provided Accept header value, the label data as JSON(in case of application/json), the label in PDF format(in case of application/pdf), or the label in ZPL format(in case of application/zpl).'
       code_400: 'Label specification validation error. Check customer data and stock location'
@@ -30,3 +35,226 @@ en:
       code_403: 'The provided authorization does not allow the user to create labels'
       code_406: 'Request media range cannot be provided. Only application/json and application/pdf are supported.'
       code_409: 'There already exists a label with the provided LabelId.'
+    tracker_trace_error: "An error occurred while locating the delivery, try again later. Error: %{error}."
+    tracker_trace_category:
+      CUSTOMS: The shipment is being processed by customs
+      DATA RECEIVED: The shipment is registrered
+      DELIVERED: Delivered at door or DHL ServicePoint
+      EXCEPTION: Something in the process went wrong, delay is expected
+      INTERVENTION: An interventation occured in the delivery process
+      IN_DELIVERY: The parcel is in transit
+      LEG: Usually the trace of a domestic delivery will start with some LEG events. It means that the shipment is registered.
+      PROBLEM: Something in the process went wrong, delay is expected
+      UNDERWAY: The parcel is being sorted
+      UNKNOWN: The status of the parcel is unknown
+    tracker_trace_status:
+      ADDRESS_CORRECTED_BY_DEPOT_MANAGER: Address details corrected by the depot manager
+      ADDRESS_UNKOWN: Incorrect address details, please contact the sender
+      AGREED_DELIVERY: Delivery according to agreement,
+      ANNOUNCED_AT_PARCELSHOP: Announced at Parcelshop
+      ARRIVED_AT_DELIVERY_FACILITY: Arrival at DHL destination
+      ARRIVED_AT_INBOUND_GATEWAY: Arrival in destination country
+      ARRIVED_AT_TERMINAL: Arrived at terminal
+      ARRIVED_DAMAGED: Arrived at the depot with damage
+      ARRIVED_FACILITY: Arrived at the international sorting center
+      AWAITING_RECEIVER_COLLECTION: Delivered at DHL Parcelshop, ready for collection by the recipient
+      BACKLOG_COLLECTION_CANCELLED: Not picked up because of backlog, pickup order canceled
+      BACKLOG_NOT_DELIVERED: Not delivered because of backlog
+      BAD_ADDRESS: The shipment could not be delivered by incorrect address
+      BONDED_LOCATION: Stored in the customs area
+      BROKER_NOTIFIED: Broker informed
+      BROKER_RELEASED: Cleared by the broker and released at customs
+      CLEARANCE_DELAY: Delayed during clearance at customs
+      CLEARANCE_RELEASE: Released by customs.
+      CLOSED: Recipient is closed
+      CLOSED_AWAITING_COLLECTION: Recipient is closed, ready for collection by the recipient at the sorting center on the next business day
+      CLOSED_ON_ARRIVAL: Recipient is not present, new delivery attempt on the next delivery day
+      CLOSED_SHIPMENT: Delivery (partially) interrupted, please contact the sender
+      COD_AMOUNT_CHANGED: Cash on delivery amount changed on request of the sender
+      COLLECTED: Picked up by the courier
+      COLLECTED_AT_NEIGHBOUR: Picked up at neighbours by the courier
+      COLLECTED_AT_PARCELSHOP: Collected at DHL Parcelshop by the recipient
+      COLLECTION_DATA_RECEIVED: Data received for pickup by courier
+      COLLECTION_HANDED_OVER_TO_DD: Pickup order handed over to another courier
+      COLLECTION_HANDED_OVER_TO_THIRD_PARTY: Pickup order handed over to another courier
+      COLLECTION_IMPORT_EXPRESS: Pickup order received from Express
+      COLLECTION_ORDER_HANDED_OVER_TO_DRIVER: Pickup order handed over to the courier
+      COLLECTION_ORDER_OUT_FOR_DELIVERY: Courier on route for pickup order
+      COLLECTION_ORDER_REFUSED: Pickup order refused by the courier
+      COLLECTION_ORDER_SCANNED: Pickup order scanned by the courier
+      COLLECTION_PLANNED_IN_ROUTE: Pickup planned in the route of the courier
+      CONFIRM_UPLIFT: Ready for departure from the international sorting center
+      CONFIRMATION_OF_CLOSING_THE_SCAN-APPLICATION_AFTER_THE_SCAN_FOR_RETURN: Sorted to send to the sorting center
+      CS_ACTION_REQUIRED: Sender will contact DHL
+      DAMAGE_RETURN: Return to sender because of damage
+      DATA_RECEIVED_WITH_PREFIX_LABEL: Data received at DHL
+      DELIVERED: Delivered delivery
+      DELIVERED_AT_NEIGHBOURS: Delivered at the neighbours
+      DELIVERED_AT_PARCELSHOP: "Delivery delivered in ServicePoint: the recipient can pick it up"
+      DELIVERED_DAMAGED: Delivered with damage
+      DELIVERED_NOT_IN_TIME: Not delivered in time
+      DELIVERY_DATA_INCORRECT: Incorrect data for delivery
+      DELIVERY_DATE_CHANGED_BY_DEPOT_MANAGER: Delivery date changed by the depot manager
+      DELIVERY_PLANNED_IN_ROUTE: Delivery planned in the route of the courier
+      DENIED_PARTIES: Stopped because of sanctioned countries
+      DEPART_FACILITY: Departure from DHL facilities
+      DEPARTURE: Departure from the sorting center
+      DEPOT_SCAN: Scanned at depot
+      DESTROYED: Destroyed as requested by the sender
+      DUTY_INVOICE: Duty invoice prepared
+      ENTRY_SUBMITTED: Entry submitted
+      FACILITY_CHECK_IN: Arrived at the international sorting center
+      FACILITY_CHECK_OUT: Ready for departure from the international sorting center
+      FORCE_MAJEURE: The delivery could not be made due to force majeure. Will try again the next business day
+      FORWARD_DESTINATION: Forwarded to the depot
+      FORWARD_DESTINATION_TOO_LATE: Forwarded to the depot too late
+      FORWARD_THIRD_PARTY: Forwarded to local carrier
+      FORWARDED_TO_DIFFERENT_ADDRESS: Will be forwarded to another address
+      FOUND_AT_DEPOT: Found at the depot
+      FOUND_DURING_INVENTORY: Found during stocktaking
+      GATEWAY_ARRIVED: Arrival at the transit DHL warehouse
+      GATEWAY_DEPARTED: Transit DHL warehouse exit
+      HANDOVER: Handed over to local carrier
+      HELD_FOR_PAYMENT: Awaiting payment
+      HELD_IN_STORAGE: In storage
+      HELD_IN_STORAGE_BACKLOG: In storage for later delivery
+      HELD_IN_STORAGE_CLOSED: In storage because of closed container
+      HELD_IN_STORAGE_DAMAGED: In storage because of damage
+      HELD_IN_STORAGE_HOLIDAY: In storage because of holiday
+      HELD_IN_STORAGE_INCOMPLETE: In storage because of incomplete
+      HELD_IN_STORAGE_REFUSED: In storage because of refusal
+      HELD_OUT_DEPOT: Taken out of storage
+      IMAGE_AVAILIBLE: Image available at DHL
+      IN_CLEARANCE_PROCESS: In clearance at customs
+      IN_ROUTE_THIRD_PARTY: On route to the depot
+      INCORRECT / UNKNOWN_PIN: Pincode incorrect or unknown
+      INFORMATION_ON_DELIVERY_TRANSMITTED: Delivery planned at the depot
+      INTERVENTION_DELIVERY_ADDRESS_CHANGED_INTO_PARCELSHOP: Request by the recipient for delivery at DHL Parcelshop
+      INTERVENTION_PROCESSED_FOR_COLLECTION_AT_PARCELSHOP: Delivery instruction changed to delivery at DHL Parcelshop
+      INTERVENTION_PROCESSED_FOR_DELIVERY_AT_NEIGHBOURS: Delivery instruction changed to delivery at the neighbours
+      INTERVENTION_RECEIVER_REQUESTS_DELIVERY_AT_ANOTHER_TIME / DATE: Agreed delivery with the recipient
+      INTERVENTION_RECEIVER_REQUESTS_DELIVERY_AT_NEIGHBOURS: Request by the recipient for delivery at the neighbours
+      INTERVENTION_RECEIVER_REQUESTS_DELIVERY_AT_PARCELSHOP: Request by the recipient for delivery at DHL Parcelshop
+      INVENTORY: Inventory
+      LEG_CREATED: Registered in network
+      LEG_REFERENCE_ADDED: Reference added
+      LOAD_VEHICLE: The shipment is in distribution
+      MIS_ROUTED: Sorted incorrectly, delayed because of resorting
+      MISCODE: Address details incorrect because of postal code
+      MISSED_DELIVERY_CYCLE: Missed delivery route
+      MISSING_AFTER_ROUTE: Delivery interrupted
+      MISSORT: Sorted incorrectly, delayed because of resorting
+      NEW_COLLECTION_ATTEMPT: New pickup attempt by the courier
+      NEW_DELIVERY_ATTEMPT: New delivery attempt on the next delivery day
+      NO_MONEY_REDELIVER: No payment, new delivery attempt on the next delivery day
+      NO_MONEY_RETURN: No payment, return to sender
+      NOT_ARRIVED: Not arrived at the depot
+      NOT_HOME: Absent recipient
+      NOTHING_COLLECTED: Nothing picked up by the courier
+      NOTHING_PICKED_UP: Nothing picked up by the courier
+      NOTIFICATION_FOR_PARCELSHOP_COLLECTION_HAS_BEEN_SENT: Notification for collection at DHL Parcelshop sent to the recipient
+      NOTIFICATION_FOR_PARCELSHOP_COLLECTION_HAS_FAILED: Failed to send notification for collection at DHL Parcelshop by the recipient
+      NOTIFICATION_OF_DELIVERY_TIME_HAS_BEEN_SENT: Notification of delivery time frame sent to the recipient
+      NOTIFICATION_OF_TIME__FRAME_HAS_BEEN_SENT: Notification of delivery time frame sent to the recipient
+      ON_HOLD: Temporarily in storage
+      ON_HOLD_ANNOUNCED: In storage
+      ON_HOLD_FOR_COLLECTION: Ready for collection at the sorting center by the recipient
+      OUT_FOR_DELIVERY: Out for delivery with the courier
+      PALLET_MATERIAL_NOT_AVAILABLE: No pallet provided
+      PALLET_NOT_EMPTY: Europallet not empty
+      PARCEL_ALREADY_RETURNED: Already returned to the sender
+      PARCEL_ARRIVED_AT_LOCAL_DEPOT: Arrived at the depot
+      PARCEL_COLLECTED: Picked up by the courier
+      PARCEL_COLLECTED_AT_PARCELSHOP_BY_COURIER: DHL has collected the shipment
+      PARCEL_FOUND_AT_PARCELSHOP: Pickup at DHL Parcelshop possible again
+      PARCEL_HANDED_OVER_TO_COURIER: Handed over to the courier
+      PARCEL_HELD_FOR_COLLECTION_AT_LOCAL_DEPOT: Ready for collection by the recipient
+      PARCEL_INFORMATION_REMOVED_FROM_PARCELSHOP_APPLICATION: Removed from the application of DHL Parcelshop
+      PARCEL_INTO_FALLBACK: Out for delivery with the courier
+      PARCEL_MISSING: Delivery interrupted, please contact the sender
+      PARCEL_MISSING_AT_PARCELSHOP: Collection at DHL Parcelshop by recipient not possible at this moment, please contact the sender
+      PARCEL_MISSING_AT_PARCELSHOP_NOTICED_AT_STOCK_CHECK: Pickup at DHL Parcelshop not possible at this moment, please contact the sender
+      PARCEL_MISSING_AT_PARCELSHOP_NOTICED_BY_COURIER: Pickup at DHL Parcelshop by the courier not possible at this moment, please contact the sender
+      PARCEL_MISSING_AT_PARCELSHOP_NOTICED_BY_CUSTOMER: Collection at DHL Parcelshop by recipient not possible at this moment, please contact the sender
+      PARCEL_NO_DATA: No data
+      PARCEL_NOT_BROUGHT_IN: Not dropped off by the sender
+      PARCEL_NOT_COLLECTED_AT_PARCELSHOP: Not collected at DHL Parcelshop
+      PARCEL_NOT_SORTED_AT_HUB_NO_INFO: Received in sorting center, awaiting instructions from sender
+      PARCEL_OUT_OF_TIME_FOR_DROP_OFF: Period expired for drop off at DHL Parcelshop by the sender
+      PARCEL_PICKED_UP_AT_PARCELSHOP: Picked up at DHL Parcelshop by the courier
+      PARCEL_READY_FOR_RETURN_TO_HUB: Ready to send to the sorting center
+      PARCEL_RECEIVED: Dropped off by the sender
+      PARCEL_RELABELED_FOR_RETURN_TO_SHIPPER: Relabeled for return to sender
+      PARCEL_RESORTED_AT_HUB: Resorted at the sorting center
+      PARCEL_RETURNED_FROM_ROUTE: Returned from the route of the courier
+      PARCEL_SCANNED_AT_RETURN_HUB: Scanned at the sorting center
+      PARCEL_SCANNED_FOR_COLLECTION_AT_PARCELSHOP_BY_COURIER: Pickup order scanned at DHL Parcelshop by the courier
+      PARCEL_SCANNED_FOR_RETURN_TO_HUB: Scanned for return to sorting center
+      PARCEL_SCANNED_INTO_HAND-TERMINAL: Entered into handheld device of the courier
+      PARCEL_SORTED_AT_HUB: The shipment has been processed at the DHL facilities
+      PARCEL_WILL_BE_BROUGHT_IN_BY_RECEIVER: Ready to drop off by the sender
+      PARTIAL_DELIVERY: Partially delivered
+      PASSED_GATEWAY: Departure from the international sorting center
+      PICKED_UP: DHL Parcel has picked up the shipment
+      PICTURE_TAKEN_OF_PARCEL: Photo taken of parcel
+      PIECE_MISSING: Delivery (partially) interrupted, please contact the sender
+      PO_BOX: Incorrect address details due to mailbox, please contact the sender
+      POSTAL_CODE_INCORRECT: Incorrect address details due to postal code unknown, please contact the sender
+      PRENOTIFICATION_RECEIVED: Shipment data received electronically. Physical reception pending
+      PROCESSED_AT_LOCATION: Processed at the sorting center
+      PROCESSED_AT_ORIGIN: Processed at the sorting center
+      RECEIVER_CLOSED_ON_HOLIDAY: Recipient is closed because of holiday
+      RECEIVER_CLOSED_ON_HOLIDAY_COLLECTION_CANCELLED: Pickup address is closed because of holiday, pickup order canceled
+      RECEIVER_CLOSED_ANNOUNCED: Recipient closed
+      RECEIVER_CLOSED_COLLECTION_CANCELLED: Pickup address is closed, pickup order canceled
+      RECEIVER_CLOSED_PASSED_TO_DEPOT: Recipient is closed, will be forwarded to sorting center
+      RECEIVER_CLOSED_PASSED_TO_PARCELSHOP: Recipient is closed, will be forwarded to DHL Parcelshop
+      RECEIVER_MOVED_OR_UNKNOWN: Recipient moved or unknown, please contact the sender
+      RECEIVER_ON_HOLIDAY_ANNOUNCED: Recipient closed because of holiday
+      RECORD_OF_TRANSIT: On route to the international sorting center
+      REDELIVER: New delivery attempt on the next delivery day
+      REDELIVER_AT_PARCELSHOP: New delivery attempt at DHL Parcelshop on the next delivery day
+      REDELIVER_DIFFERENT_ADDRESS: New delivery attempt on another address the next delivery day
+      REDELIVER_SAME_ADDRESS: New delivery attempt on the same address next delivery day
+      REFUSED: Delivery interrupted
+      REFUSED_OTHER_REASON: Not delivered because of other reason
+      REFUSED_TOO_LATE: Refused because of delivery too late
+      REFUSED_2ND_KIB: Not collected at the sorting center by the recipient return to sender
+      REFUSED_AT_PARCELSHOP: Refused at DHL Parcelshop by the recipient
+      REFUSED_BY_RECEIVER: The recipient has rejected the shipment
+      REFUSED_DAMAGED: Refused because of damage
+      REFUSED_INCOMPLETE: Refused because of incomplete
+      REFUSED_INVENTORY: Refused because of inventory
+      REFUSED_NO_MONEY: Refused because of no money
+      REFUSED_NO_RECAP: Refused because of missing delivery note
+      REFUSED_NOT_COLLECTED: Not collected by the recipient, return to sender
+      REFUSED_NOT_ORDERED: Refused by the recipient because of not ordered
+      REFUSED_RETURN_TO_DD: Refused and return to sorting center
+      REFUSED_WILL_NOT_PAY: Not delivered because of no payment by the recipient
+      REFUSED_NOT_SIGNED: Refused, receiver refuses to sign
+      REFUSED_REQUESTS_WAYBILL: Refused, receiver requests waybill
+      RELABELED: Relabeled
+      RESPONSE_RECEIVED: Response received
+      RETURN_ORDER_CANCELLED: Return order canceled at DHL Parcelshop
+      RETURNED_TO_SHIPPER: The shipment has been returned to the sender
+      REWEIGH: Weighed and measured at the sorting center
+      SCAN_OK_GATEWAY: Departure from the international sorting center
+      SCHEDULED_FOR_MOVEMENT: Delivery instruction changed to delivery at another day or time
+      SERVICE_CHANGED: Service changed
+      SHIPMENT_ACCEPTANCE: Dropped off at DHL Parcelshop by the sender
+      SHIPMENT_COLLECTED: Collected by the recipient
+      SHIPMENT_INSPECTION: Customs clearance is being processed
+      SHIPMENT_INTERCEPT: Interception by customs
+      SHIPMENT_STOPPED: Impounded by customs
+      SIGNATURE_RECORDED: Signature received upon receipt
+      SPONTANIOUS_RETURN: Unannounced return given to the courier
+      STORAGE_PERIOD_ENDED_AT_PARCELSHOP: "Shipment not picked up in ServicePoint: it is returned to the sender"
+      TRACE_INITIATED: Customer service of DHL initiates action
+      TRACE_TERMINATED: Customer service of DHL terminates action
+      TRANSPORT_DELAY: Delayed during transport
+      UNCONTROLLABLE_CLEARANCE_DELAY: The shipment is suffering a delay in customs for reasons beyond DHL's control
+      UNJUSTIFIED_SPONTANIOUS_RETURN: Unjustified return given to the courier
+      UNLOAD_VEHICLE: Vehicle is being unloaded
+      WILL_BE_COLLECTED: Will be picked up
+      WILL_BE_TRANSFERRED_TO_THIRD_PARTY: Will be transferred to third party
+    wait_process: This process can take several minutes...

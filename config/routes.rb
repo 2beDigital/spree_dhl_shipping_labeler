@@ -2,6 +2,9 @@ Spree::Core::Engine.routes.draw do
   namespace :admin do
     resources :orders do
         resources :dhl_labels
+        member do
+          post :show_shipment_state_dhl, to: 'orders#show_shipment_state_dhl'
+        end
     end
   end
 

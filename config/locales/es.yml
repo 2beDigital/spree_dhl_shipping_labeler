@@ -4,17 +4,23 @@ es:
     company_lastname: ''
     generate_new_label: Generar Nueva Etiqueta
     order_number: Número de Pedido
-    dhl_shipping_labels: Etiquetas de envio para DHL
-    no_shipping_labels_for: "No hay etiquetas de envio para: %{number}. Estado del envio => %{state} "
+    dhl_shipping_labels: Etiquetas de envío para DHL
+    no_shipping_labels_for: "No hay etiquetas de envío para: %{number}. Estado del envío => %{state}"
     ready: Listo
     pending: Pendiente
     shipped: Enviado
     print: Imprimir
     label: "Etiqueta - %{number}: Creada hace %{created}"
-    label_error: "Se ha producido un error al crear la etiqueta."
+    label_error: Se ha producido un error al crear la etiqueta.
     label_success: "La etiqueta %{number} se ha creado correctamente."
     label_reload_success: "La etiqueta %{number} ya ha sido creada."
     tracker_code: 'Numero de seguimiento: '
+    delivery_events: Eventos de la entrega
+    delivery_status: Estado de la entrega
+    date_of_event: Fecha del evento
+    your_delivery_status: "Estado de la entrega:"
+    show_delivery_status: Estado del envío
+    show_delivery: Mostrar envío
     generate_label_errors:
       code_201: 'Crea una etiqueta. Dependiendo del valor del encabezado Aceptado provisto, los datos de la etiqueta como JSON (en caso de aplicación/json), la etiqueta en formato PDF (en caso de aplicación/pdf), o la etiqueta en formato ZPL (en caso de aplicación/zpl). '
       code_400: 'Error de validación de especificación de etiqueta. Compruebe los datos del cliente y de la localización del almacen.'
@@ -22,3 +28,233 @@ es:
       code_403: 'La autorización proporcionada no permite al usuario crear etiquetas'
       code_406: 'No se puede proporcionar el rango de medios de solicitud. Solo application/json y application/pdf son compatibles.'
       code_409: 'Ya existe una etiqueta con el LabelId proporcionado.'
+    wait_process: Este proceso puede tardar varios minutos...
+    tracker_trace_error: "A ocurrido un error al localizar el envío, intentelo de nuevo más tarde. Error: %{error}."
+    tracker_trace_category:
+      CUSTOMS: En trámite aduanero
+      DATA_RECEIVED: Datos de envío recibidos
+      DELIVERED: Entregado
+      EXCEPTION: Excepción
+      IN_DELIVERY: En reparto
+      INTERVENTION: Solicitud de cambio en la entrega
+      LEG: Información de envío recibida
+      PROBLEM: Incidencia
+      UNDERWAY: De camino
+      UNKNOWN: El estado del paquete es desconocido
+    tracker_trace_status:
+      ADDRESS_CORRECTED_BY_DEPOT_MANAGER: detalles de dirección corregidos por el administrador de depósito
+      ADDRESS_UNKOWN: detalles de dirección incorrectos, póngase en contacto con el remitente
+      AGREED_DELIVERY: entrega según acuerdo,
+      ANNOUNCED_AT_PARCELSHOP: anunciado en Parcelshop
+      ARRIVED_AT_DELIVERY_FACILITY: Llegada al destino de DHL
+      ARRIVED_AT_INBOUND_GATEWAY: llegada al país de destino
+      ARRIVED_AT_TERMINAL: llegó a la terminal
+      ARRIVED_DAMAGED: llegó al depósito con daños
+      ARRIVED_FACILITY: llegó al centro de clasificación internacional
+      AWAITING_RECEIVER_COLLECTION: Entregado en DHL Parcelshop, listo para ser recogido por el destinatario
+      BACKLOG_COLLECTION_CANCELLED: no recogido debido a la acumulación, orden de recogida cancelada
+      BACKLOG_NOT_DELIVERED: no se entregó debido a la acumulación
+      BAD_ADDRESS: El envío no pudo ser entregado por una dirección incorrecta
+      BONDED_LOCATION: almacenado en el área de aduanas
+      BROKER_NOTIFIED: Broker informado
+      BROKER_RELEASED: Autorizado por el corredor y liberado en la aduana
+      CLEARANCE_DELAY: demorado durante el despacho en la aduana
+      CLEARANCE_RELEASE: publicado por la aduana.
+      CLOSED: El destinatario está cerrado
+      CLOSED_AWAITING_COLLECTION: el destinatario está cerrado, listo para ser recogido por el destinatario en el centro de clasificación el siguiente día hábil
+      CLOSED_ON_ARRIVAL: el destinatario no está presente, nuevo intento de entrega el día de la próxima entrega
+      CLOSED_SHIPMENT: Entrega (parcialmente) interrumpida, por favor póngase en contacto con el remitente
+      COD_AMOUNT_CHANGED: el monto contra reembolso cambió a petición del remitente
+      COLLECTED: recogido por el servicio de mensajería
+      COLLECTED_AT_NEIGHBOUR: recogido en los vecinos por el servicio de mensajería
+      COLLECTED_AT_PARCELSHOP: recogido en DHL Parcelshop por el destinatario
+      COLLECTION_DATA_RECEIVED: datos recibidos para recoger por mensajería
+      COLLECTION_HANDED_OVER_TO_DD: orden de recogida entregada a otro mensajero
+      COLLECTION_HANDED_OVER_TO_THIRD_PARTY: orden de recogida entregada a otro mensajero
+      COLLECTION_IMPORT_EXPRESS: orden de recogida recibida de Express
+      COLLECTION_ORDER_HANDED_OVER_TO_DRIVER: orden de recogida entregada al mensajero
+      COLLECTION_ORDER_OUT_FOR_DELIVERY: Courier en la ruta de recogida
+      COLLECTION_ORDER_REFUSED: orden de recogida rechazada por el servicio de mensajería
+      COLLECTION_ORDER_SCANNED: orden de recogida escaneada por el servicio de mensajería
+      COLLECTION_PLANNED_IN_ROUTE: retiro previsto en la ruta del servicio de mensajería
+      CONFIRM_UPLIFT: listo para salir del centro de clasificación internacional
+      CONFIRMATION_OF_CLOSING_THE_SCAN-APPLICATION_AFTER_THE_SCAN_FOR_RETURN: ordenado para enviar al centro de clasificación
+      CS_ACTION_REQUIRED: el remitente se pondrá en contacto con DHL
+      DAMAGE_RETURN: Volver al remitente debido a daños
+      DATA_RECEIVED_WITH_PREFIX_LABEL: datos recibidos en DHL
+      DELIVERED: entrega entregada
+      DELIVERED_AT_NEIGHBOURS: Entregado a los vecinos
+      DELIVERED_AT_PARCELSHOP: "Entrega entregada en ServicePoint: el destinatario puede recogerla"
+      DELIVERED_DAMAGED: entregado con daño
+      DELIVERED_NOT_IN_TIME: no entregado a tiempo
+      DELIVERY_DATA_INCORRECT: datos incorrectos para la entrega
+      DELIVERY_DATE_CHANGED_BY_DEPOT_MANAGER: fecha de entrega modificada por el administrador de depósito
+      DELIVERY_PLANNED_IN_ROUTE: entrega prevista en la ruta del servicio de mensajería
+      DENIED_PARTIES: detenido debido a países sancionados
+      DEPART_FACILITY: Salida de las instalaciones de DHL
+      DEPARTURE: Salida desde el centro de clasificación
+      DEPOT_SCAN: escaneado en el depósito
+      DESTROYED: Destruido según lo solicitado por el remitente
+      DUTY_INVOICE: factura de trabajo preparada
+      ENTRY_SUBMITTED: entrada enviada
+      FACILITY_CHECK_IN: Llegó al centro de clasificación internacional
+      FACILITY_CHECK_OUT: listo para salir del centro de clasificación internacional
+      FORCE_MAJEURE: La entrega no pudo realizarse debido a fuerza mayor. Intentaremos nuevamente el siguiente día hábil
+      FORWARD_DESTINATION: reenviado al depósito
+      FORWARD_DESTINATION_TOO_LATE: reenviado al depósito demasiado tarde
+      FORWARD_THIRD_PARTY: reenviado a la operadora local
+      FORWARDED_TO_DIFFERENT_ADDRESS: se reenviará a otra dirección
+      FOUND_AT_DEPOT: encontrado en el depósito
+      FOUND_DURING_INVENTORY: encontrado durante el inventario
+      GATEWAY_ARRIVED: Llegada al almacén de DHL de tránsito
+      GATEWAY_DEPARTED: salida del almacén de tránsito DHL
+      HANDOVER: entregado a la compañía local
+      HELD_FOR_PAYMENT: en espera de pago
+      HELD_IN_STORAGE: en almacenamiento
+      HELD_IN_STORAGE_BACKLOG: en almacenamiento para una entrega posterior
+      HELD_IN_STORAGE_CLOSED: en almacenamiento debido a contenedor cerrado
+      HELD_IN_STORAGE_DAMAGED: en almacenamiento debido a daños
+      HELD_IN_STORAGE_HOLIDAY: en almacenamiento debido a vacaciones
+      HELD_IN_STORAGE_INCOMPLETE: en almacenamiento debido a incompleto
+      HELD_IN_STORAGE_REFUSED: en almacenamiento debido a un rechazo
+      HELD_OUT_DEPOT: retirado del almacenamiento
+      IMAGE_AVAILIBLE: Imagen disponible en DHL
+      IN_CLEARANCE_PROCESS: En despacho en la aduana
+      IN_ROUTE_THIRD_PARTY: en ruta hacia el depósito
+      INCORRECT/UNKNOWN_PIN: código PIN incorrecto o desconocido
+      INFORMATION_ON_DELIVERY_TRANSMITTED: entrega planificada en el depósito
+      INTERVENTION_DELIVERY_ADDRESS_CHANGED_INTO_PARCELSHOP: Solicitud del destinatario para la entrega en DHL Parcelshop
+      INTERVENTION_PROCESSED_FOR_COLLECTION_AT_PARCELSHOP: Instrucción de entrega cambiada a entrega en DHL Parcelshop
+      INTERVENTION_PROCESSED_FOR_DELIVERY_AT_NEIGHBOURS: Instrucción de entrega cambiada a entrega en los vecinos
+      INTERVENTION_RECEIVER_REQUESTS_DELIVERY_AT_ANOTHER_TIME / DATE: entrega acordada con el destinatario
+      INTERVENTION_RECEIVER_REQUESTS_DELIVERY_AT_NEIGHBOURS: Solicitud del destinatario para la entrega a los vecinos
+      INTERVENTION_RECEIVER_REQUESTS_DELIVERY_AT_PARCELSHOP: Solicitud del destinatario para la entrega en DHL Parcelshop
+      INVENTORY: inventario
+      LEG_CREATED: registrado en la red
+      LEG_REFERENCE_ADDED: referencia añadida
+      LOAD_VEHICLE: el envío está en distribución
+      MIS_ROUTED: ordenó incorrectamente, retrasó debido a recurrir
+      MISCODE: detalles de dirección incorrectos debido a código postal
+      MISSED_DELIVERY_CYCLE: ruta de entrega perdida
+      MISSING_AFTER_ROUTE: entrega interrumpida
+      MISSORT: ordenó incorrectamente, retrasó debido a recurrir
+      NEW_COLLECTION_ATTEMPT: Nuevo intento de recolección por parte del servicio de mensajería
+      NEW_DELIVERY_ATTEMPT: Nuevo intento de entrega en el siguiente día de entrega
+      NO_MONEY_REDELIVER: sin pago, nuevo intento de entrega en el siguiente día de entrega
+      NO_MONEY_RETURN: Sin pago, devolver al remitente
+      NOT_ARRIVED: no llegó al depósito
+      NOT_HOME: destinatario ausente
+      NOTHING_COLLECTED: nada recogido por el servicio de mensajería
+      NOTHING_PICKED_UP: nada recogido por el servicio de mensajería
+      NOTIFICATION_FOR_PARCELSHOP_COLLECTION_HAS_BEEN_SENT: Notificación de recopilación en DHL Parcelshop enviada al destinatario
+      NOTIFICATION_FOR_PARCELSHOP_COLLECTION_HAS_FAILED: No se pudo enviar la notificación para la recopilación en DHL Parcelshop por parte del destinatario
+      NOTIFICATION_OF_DELIVERY_TIME_HAS_BEEN_SENT: Notificación del plazo de entrega enviado al destinatario
+      NOTIFICATION_OF_TIME__FRAME_HAS_BEEN_SENT: Notificación del plazo de entrega enviado al destinatario
+      ON_HOLD: temporalmente en almacenamiento
+      ON_HOLD_ANNOUNCED: En almacenamiento
+      ON_HOLD_FOR_COLLECTION: Listo para ser recolectado en el centro de clasificación por el destinatario
+      OUT_FOR_DELIVERY: listo para la entrega con el servicio de mensajería
+      PALLET_MATERIAL_NOT_AVAILABLE: sin paleta proporcionada
+      PALLET_NOT_EMPTY: Europallet no está vacío
+      PARCEL_ALREADY_RETURNED: Ya devuelto al remitente
+      PARCEL_ARRIVED_AT_LOCAL_DEPOT: llegó al depósito
+      PARCEL_COLLECTED: recogido por el servicio de mensajería
+      PARCEL_COLLECTED_AT_PARCELSHOP_BY_COURIER: DHL ha recogido el envío
+      PARCEL_FOUND_AT_PARCELSHOP: Es posible volver a recoger en DHL Parcelshop
+      PARCEL_HANDED_OVER_TO_COURIER: entregado al servicio de mensajería
+      PARCEL_HELD_FOR_COLLECTION_AT_LOCAL_DEPOT: Listo para ser recolectado por el destinatario
+      PARCEL_INFORMATION_REMOVED_FROM_PARCELSHOP_APPLICATION: eliminado de la aplicación de DHL Parcelshop
+      PARCEL_INTO_FALLBACK: Salida para entrega con el servicio de mensajería
+      PARCEL_MISSING: entrega interrumpida, póngase en contacto con el remitente
+      PARCEL_MISSING_AT_PARCELSHOP: Colección en DHL Parcelshop por el destinatario no posible en este momento, por favor póngase en contacto con el remitente
+      PARCEL_MISSING_AT_PARCELSHOP_NOTICED_AT_STOCK_CHECK: Recolección en DHL Parcelshop no posible en este momento, por favor póngase en contacto con el remitente
+      PARCEL_MISSING_AT_PARCELSHOP_NOTICED_BY_COURIER: Recogida en DHL Parcelshop por el servicio de mensajería no posible en este momento, por favor póngase en contacto con el remitente
+      PARCEL_MISSING_AT_PARCELSHOP_NOTICED_BY_CUSTOMER: no es posible la recogida en la tienda de paquetería de DHL en este momento. Póngase en contacto con el remitente.
+      PARCEL_NO_DATA: Sin datos
+      PARCEL_NOT_BROUGHT_IN: no caído por el remitente
+      PARCEL_NOT_COLLECTED_AT_PARCELSHOP: No se recolectó en DHL Parcelshop
+      PARCEL_NOT_SORTED_AT_HUB_NO_INFO: Recibido en el centro de clasificación, en espera de las instrucciones del remitente
+      PARCEL_OUT_OF_TIME_FOR_DROP_OFF: Período caducado para dejar en DHL Parcelshop por el remitente
+      PARCEL_PICKED_UP_AT_PARCELSHOP: recogido en DHL Parcelshop por el servicio de mensajería
+      PARCEL_READY_FOR_RETURN_TO_HUB: listo para enviar al centro de clasificación
+      PARCEL_RECEIVED: retirado por el remitente
+      PARCEL_RELABELED_FOR_RETURN_TO_SHIPPER: Relabeled para devolver al remitente
+      PARCEL_RESORTED_AT_HUB: se encuentra en el centro de clasificación
+      PARCEL_RETURNED_FROM_ROUTE: devuelto de la ruta del servicio de mensajería
+      PARCEL_SCANNED_AT_RETURN_HUB: escaneado en el centro de clasificación
+      PARCEL_SCANNED_FOR_COLLECTION_AT_PARCELSHOP_BY_COURIER: orden de recogida escaneada en DHL Parcelshop por el servicio de mensajería
+      PARCEL_SCANNED_FOR_RETURN_TO_HUB: escaneado para volver al centro de clasificación
+      PARCEL_SCANNED_INTO_HAND-TERMINAL: ingresado en el dispositivo de mano del mensajero
+      PARCEL_SORTED_AT_HUB: el envío se ha procesado en las instalaciones de DHL
+      PARCEL_WILL_BE_BROUGHT_IN_BY_RECEIVER: listo para dejar por el remitente
+      PARTIAL_DELIVERY: Parcialmente entregado
+      PASSED_GATEWAY: Salida del centro de clasificación internacional
+      PICKED_UP: DHL Parcel ha recogido el envío
+      PICTURE_TAKEN_OF_PARCEL: foto tomada del paquete
+      PIECE_MISSING: Entrega (parcialmente) interrumpida, por favor póngase en contacto con el remitente
+      PO_BOX: detalles de dirección incorrectos debido al buzón, por favor, póngase en contacto con el remitente
+      POSTAL_CODE_INCORRECT: detalles de dirección incorrectos debido a un código postal desconocido, contáctese con el remitente
+      PRENOTIFICATION_RECEIVED: datos de envío recibidos electrónicamente. Recepción física pendiente
+      PROCESSED_AT_LOCATION: procesado en el centro de clasificación
+      PROCESSED_AT_ORIGIN: procesado en el centro de clasificación
+      RECEIVER_CLOSED_ON_HOLIDAY: el destinatario está cerrado por vacaciones
+      RECEIVER_CLOSED_ON_HOLIDAY_COLLECTION_CANCELLED: la dirección de recogida está cerrada debido a vacaciones, orden de recogida cancelada
+      RECEIVER_CLOSED_ANNOUNCED: Recipient closed
+      RECEIVER_CLOSED_COLLECTION_CANCELLED: la dirección de recogida está cerrada, la orden de recogida cancelada
+      RECEIVER_CLOSED_PASSED_TO_DEPOT: el destinatario se cierra, se reenviará al centro de clasificación
+      RECEIVER_CLOSED_PASSED_TO_PARCELSHOP: El destinatario está cerrado, se enviará a DHL Parcelshop
+      RECEIVER_MOVED_OR_UNKNOWN: Destinatario movido o desconocido, contáctese con el remitente
+      RECEIVER_ON_HOLIDAY_ANNOUNCED: destinatario cerrado por vacaciones
+      RECORD_OF_TRANSIT: En camino al centro de clasificación internacional
+      REDELIVER: nuevo intento de entrega en el siguiente día de entrega
+      REDELIVER_AT_PARCELSHOP: Nuevo intento de entrega en DHL Parcelshop el día de la próxima entrega
+      REDELIVER_DIFFERENT_ADDRESS: nuevo intento de entrega en otra dirección el siguiente día de entrega
+      REDELIVER_SAME_ADDRESS: nuevo intento de entrega en la misma dirección el día de la próxima entrega
+      REFUSED: entrega interrumpida
+      REFUSED_OTHER_REASON: no se entregó debido a otra razón
+      REFUSED_TOO_LATE: se ha rechazado debido a la entrega demasiado tarde
+      REFUSED_2ND_KIB: no recogido en el centro de clasificación por el destinatario devuelva al remitente
+      REFUSED_AT_PARCELSHOP: Rechazado en DHL Parcelshop por el destinatario
+      REFUSED_BY_RECEIVER: el destinatario ha rechazado el envío
+      REFUSED_DAMAGED: se rechazó debido a daños
+      REFUSED_INCOMPLETE: Rehusó debido a incompleto
+      REFUSED_INVENTORY: rechazado debido a inventario
+      REFUSED_NO_MONEY: se negó porque no hay dinero
+      REFUSED_NO_RECAP: se ha rechazado debido a una nota de entrega faltante
+      REFUSED_NOT_COLLECTED: no recopilado por el destinatario, devolver al remitente
+      REFUSED_NOT_ORDERED: rechazado por el destinatario debido a que no se ha ordenado
+      REFUSED_RETURN_TO_DD: rechazado y regresar al centro de clasificación
+      REFUSED_WILL_NOT_PAY: no se entregó debido a que el destinatario no pagó
+      REFUSED_NOT_SIGNED: Rechazado, el receptor se niega a firmar
+      REFUSED_REQUESTS_WAYBILL: Rechazado, el receptor solicita la carta de porte
+      RELABELED: Re-etiquetado
+      RESPONSE_RECEIVED: respuesta recibida
+      RETURN_ORDER_CANCELLED: orden de devolución cancelada en DHL Parcelshop
+      RETURNED_TO_SHIPPER: El envío ha sido devuelto al remitente
+      REWEIGH: Pesado y medido en el centro de clasificación
+      SCAN_OK_GATEWAY: Salida desde el centro de clasificación internacional
+      SCHEDULED_FOR_MOVEMENT: las instrucciones de entrega cambiaron a la entrega en otro día o horario
+      SERVICE_CHANGED: el servicio ha cambiado
+      SHIPMENT_ACCEPTANCE: retirado en DHL Parcelshop por el remitente
+      SHIPMENT_COLLECTED: recogido por el destinatario
+      SHIPMENT_INSPECTION: se está procesando el despacho de aduana
+      SHIPMENT_INTERCEPT: interceptación por las aduanas
+      SHIPMENT_STOPPED: Imponente por las aduanas
+      SIGNATURE_RECORDED: Firma recibida al recibirla
+      SPONTANIOUS_RETURN: devolución no anunciada al servicio de mensajería
+      STORAGE_PERIOD_ENDED_AT_PARCELSHOP: "Envío no recogido en ServicePoint: se devuelve al remitente"
+      TRACE_INITIATED: El servicio al cliente de DHL inicia la acción
+      TRACE_TERMINATED: el servicio al cliente de DHL finaliza la acción
+      TRANSPORT_DELAY: Demorado durante el transporte
+      UNCONTROLLABLE_CLEARANCE_DELAY: El envío está sufriendo un retraso en la aduana por razones que escapan al control de DHL
+      UNJUSTIFIED_SPONTANIOUS_RETURN: devolución injustificada al servicio de mensajería
+      UNLOAD_VEHICLE: el vehículo está siendo descargado
+      WILL_BE_COLLECTED: será recogido
+      WILL_BE_TRANSFERRED_TO_THIRD_PARTY: será transferido a un tercero
+
+
+
+
+
+
+
