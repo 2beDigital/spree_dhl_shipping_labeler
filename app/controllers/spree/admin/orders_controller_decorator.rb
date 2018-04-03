@@ -4,7 +4,6 @@ Spree::Admin::OrdersController.class_eval do
 	respond_to :js, :only => [:show_shipment_state_dhl]
     ssl_allowed :show_shipment_state_dhl
 	def show_shipment_state_dhl
-		byebug
 		if has_dhl_shipments?
 		    @order.shipments.each do |shipment|
 		      if shipment.dhl_label
