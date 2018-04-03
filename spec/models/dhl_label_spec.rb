@@ -56,5 +56,22 @@ describe Spree::DhlLabel, :type => :model do
       label.generate_label!
       expect(label.label).to be_an_instance_of(String)
     end
+    it "label return errors" do
+      label.errors.add(:generate_label, "Can't generate label")
+      expect(label.errors).to_not be_empty
+    end
+    it "label not be empty" do
+      expect(label.generate_label!).to_not be_empty
+    end
+  end
+
+  describe "Get delivery tracking" do
+    it "Get delivery not be empty" do
+      expect(label.get_shipment_status).to_not be_empty
+    end
+    it "Get delivery return errors" do
+      label.errors.add(:shipment_status, "Can't get delivery")
+      expect(label.errors).to_not be_empty
+    end
   end
 end

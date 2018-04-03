@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Spree::OrdersHelper, :type => :helper do
+describe Spree::Admin::OrdersHelper, :type => :helper do
 	let(:order) { create(:order_ready_to_ship) }
 	
 	it "is not valid with default attributes" do

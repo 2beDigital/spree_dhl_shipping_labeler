@@ -1,29 +1,42 @@
 {
-  "id": "5ab4c943e4707c1f5cc935h8",
-  "barcode": "JVGL280326947920112799567",
-  "date": "2018-03-23T09:30:18.000Z",
+  "id": "5a5cd0b1a4f53ba65f1c48f6",
+  "barcode": "JJD00026808010032493001",
+  "date": "2018-01-11T08:55:54.000Z",
   "events": [
     {
-      "category": "LEG",
+      "category": "UNDERWAY",
+      "facility": "LLUCMAJOR-07620",
+      "localTimestamp": "2018-01-11T09:11:43.000+01:00",
       "leg": {
-        "accountId": "59572123",
-        "network": "ECOMMERCE"
+        "network": "CDEx"
       },
-      "localTimestamp": "2018-03-23T10:30:18.000+01:00",
-      "status": "LEG_CREATED",
-      "timestamp": "2018-03-23T09:30:18.000Z",
-      "type": "LEG_EVENT"
+      "status": "ARRIVED_AT_DELIVERY_FACILITY",
+      "timestamp": "2018-01-11T08:11:43.000Z",
+      "type": "PIECE_EVENT"
     },
     {
-      "category": "DATA_RECEIVED",
-      "localTimestamp": "2018-03-23T10:30:18.000+01:00",
+      "category": "IN_DELIVERY",
+      "facility": "LLUCMAJOR-07620",
+      "localTimestamp": "2018-01-11T09:55:54.000+01:00",
       "leg": {
-        "network": "ECOMMERCE"
+        "network": "CDEx"
       },
-      "status": "DATA_RECEIVED_WITH_PREFIX_LABEL",
-      "timestamp": "2018-03-23T09:30:18.000Z",
+      "status": "LOAD_VEHICLE",
+      "timestamp": "2018-01-11T08:55:54.000Z",
+      "type": "PIECE_EVENT"
+    },
+    {
+      "category": "DELIVERED",
+      "facility": "LLUCMAJOR-07620",
+      "localTimestamp": "2018-01-11T11:43:00.000+01:00",
+      "leg": {
+        "network": "CDEx"
+      },
+      "status": "DELIVERED",
+      "timestamp": "2018-01-11T10:43:00.000Z",
       "type": "PIECE_EVENT"
     }
   ],
-  "type": "SHIPMENT"
+  "type": "SHIPMENT",
+  "deliveredAt": "2018-01-11T11:43:00.000+01:00"
 }

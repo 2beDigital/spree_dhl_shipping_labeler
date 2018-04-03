@@ -9,6 +9,10 @@ class FakeDhlApi < Sinatra::Base
     json_response 200, 'pdf_label.json'
   end
 
+  get '/track-trace' do
+    json_response 200, 'track_trace.json'
+  end
+
   private
 
   def json_response(response_code, file_name)

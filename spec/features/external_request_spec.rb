@@ -12,4 +12,10 @@ feature 'External request' do
     response = Net::HTTP::Post.new(uri)
     expect(response).to be_an_instance_of(Net::HTTP::Post)
   end
+
+  it 'queries get delivery from DHL Parcel API' do
+    uri = URI.parse("https://api-gw-accept.dhlparcel.nl/track-trace?key=JJD00026108000001940001")
+    response = Net::HTTP::Get.new(uri)
+    expect(response).to be_an_instance_of(Net::HTTP::Get)
+  end
 end
