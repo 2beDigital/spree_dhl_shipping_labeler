@@ -6,6 +6,7 @@ module Spree
     default_scope { order "created_at desc" }
     validates :tracker_code, presence: true 
     validates :label, presence: true
+    validates :label_format, presence: true
 
     def show_tracker_code
       self.tracker_code || 'No tracking number available'
@@ -19,7 +20,7 @@ module Spree
         self.response = _response
         self.request  = _request
         self.tracker_code = JSON.parse(response.body)['trackerCode']
-        self.label = JSON.parse(response.body)['pdf']
+        self.label = (self.label_format == 'pdf') ? JSON.parse(response.body)['pdf'] : JSON.parse(response.body)['zpl']
       end
     end
 

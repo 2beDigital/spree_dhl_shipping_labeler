@@ -17,6 +17,10 @@ module Spree
       dhl_label.shipping_dhl_box
     end
 
+    def label_format
+      dhl_label.label_format
+    end
+
     def shipment_number
       shipment.number
     end

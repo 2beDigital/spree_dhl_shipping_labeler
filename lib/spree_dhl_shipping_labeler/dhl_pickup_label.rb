@@ -49,7 +49,7 @@ module SpreeDhlShippingLabeler
     def config_body_label
       {
         labelId: SecureRandom.uuid,
-        labelFormat: 'pdf',
+        labelFormat: package.label_format,
         orderReference: package.order_number,
         orderId:        package.order_number,
         parcelTypeKey:  package.box.present? ? package.box.description : 'SMALL',

@@ -28,6 +28,7 @@ en:
     delivery_events: Delivery events
     delivery_status: Delivery status
     date_of_event: Date of event
+    label_format: Label Format
     generate_label_errors:
       code_201: 'Create a label. Depending on the provided Accept header value, the label data as JSON(in case of application/json), the label in PDF format(in case of application/pdf), or the label in ZPL format(in case of application/zpl).'
       code_400: 'Label specification validation error. Check customer data and stock location'

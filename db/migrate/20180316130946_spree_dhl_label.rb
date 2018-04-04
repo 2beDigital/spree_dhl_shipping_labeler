@@ -8,6 +8,7 @@ class SpreeDhlLabel < ActiveRecord::Migration
 			t.text       :response,                limit: 4294967295
 			t.text       :label,                   limit: 4294967295
 			t.string     :tracker_code
+			t.string     :label_format
 			t.datetime   :created_at,              null: false
 			t.datetime   :updated_at,              null: false
 	    end

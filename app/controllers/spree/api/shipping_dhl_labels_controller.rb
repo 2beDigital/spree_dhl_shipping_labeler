@@ -6,7 +6,7 @@ module Spree
       
       def generate_dhl_label        
         if @shipment.state != 'shipped'
-          @label = @shipment.build_dhl_label(spree_shipping_dhl_box_id: params[:spree_shipping_dhl_box_id])
+          @label = @shipment.build_dhl_label(label_format: params[:label_format],spree_shipping_dhl_box_id: params[:spree_shipping_dhl_box_id])
           @label.generate_label!
           errors = @label.errors.messages[:generate_label].present? ? @label.errors.messages[:generate_label].first : nil
           if @label.save
