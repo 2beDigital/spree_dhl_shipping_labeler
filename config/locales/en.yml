@@ -257,4 +257,9 @@ en:
       UNLOAD_VEHICLE: Vehicle is being unloaded
       WILL_BE_COLLECTED: Will be picked up
       WILL_BE_TRANSFERRED_TO_THIRD_PARTY: Will be transferred to third party
+    dhl_box:
+      SMALL:  "Small: Max Weight: 5kg - Dimensions: Length: 25cm, Width: 20cm, Height: 5cm"
+      MEDIUM: "Medium: Min Weight: 5kg, Max Weight: 15kg - Dimensions: Length: 60cm, Width: 50cm, Height: 25cm"
+      LARGE:  "Large: Min Weight: 15kg, Max Weight: 31kg - Dimensions: Length: 120cm, Width: 60cm, Height: 60cm"
+      BULKY:  "Bulky: Max Weight: 31kg - Dimensions: Length: 200cm, Width: 120cm, Height: 80cm"
     wait_process: This process can take several minutes...

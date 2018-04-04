@@ -251,6 +251,11 @@ es:
       UNLOAD_VEHICLE: el vehículo está siendo descargado
       WILL_BE_COLLECTED: será recogido
       WILL_BE_TRANSFERRED_TO_THIRD_PARTY: será transferido a un tercero
+    dhl_box:
+      SMALL:  "Pequeña: Max Peso: 5kg - Dimensiones: Largo: 25cm, Ancho: 20cm, Alto: 5cm"
+      MEDIUM: "Mediana: Min Peso: 5kg, Max Peso: 15kg - Dimensiones: Largo: 60cm, Ancho: 50cm, Alto: 25cm"
+      LARGE:  "Grande: Min Peso: 15kg, Max Peso: 31kg - Dimensiones: Largo: 120cm, Ancho: 60cm, Alto: 60cm"
+      BULKY:  "Extra grande: Max Peso: 31kg - Dimensiones: Largo: 200cm, Ancho: 120cm, Alto: 80cm"
 
 
 
