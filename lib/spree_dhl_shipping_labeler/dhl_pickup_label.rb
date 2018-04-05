@@ -7,8 +7,8 @@ module SpreeDhlShippingLabeler
 
     def initialize(pkg=nil)
       @package = pkg
-      @customer = @package.formatted_destination
-      @shipper = @package.formatted_origin
+      @customer = @package.return_label ? @package.formatted_origin : @package.formatted_destination
+      @shipper  =  @package.return_label ? @package.formatted_destination : @package.formatted_origin
       @credentials = SpreeDhlShippingLabeler::DhlConection.credentials
     end
 
@@ -66,7 +66,7 @@ module SpreeDhlShippingLabeler
             city: customer[:city],
             street: customer[:street],
             number: customer[:number] || '',
-            isBusiness: false
+            isBusiness: package.return_label
           },
           email: customer[:email],
           phoneNumber: customer[:phoneNumber]
@@ -84,7 +84,7 @@ module SpreeDhlShippingLabeler
             city: shipper[:city],
             street: shipper[:street],
             number: shipper[:number] || '',
-            isBusiness: true
+            isBusiness: !package.return_label
           },
           email: shipper[:email],
           phoneNumber: shipper[:phoneNumber],
@@ -95,7 +95,7 @@ module SpreeDhlShippingLabeler
           { key: 'DOOR' },
           { key: 'REFERENCE', input: package.shipment_number }
         ],
-        isReturnShipment: false,
+        returnLabel: package.return_label,
         pieceNumber: 1,
         quantity: 1,
         application: 'string',

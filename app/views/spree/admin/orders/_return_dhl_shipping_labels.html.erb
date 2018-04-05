@@ -26,12 +26,14 @@
         <% end %>
       </ul>
       <br/>
-      <% if shipment.state != 'shipped' && shipment.state != 'pending' %>
+      <% if ( shipment.state != 'shipped' && shipment.state != 'pending' ) || @order.return_authorizations.present?  %>
         <%= form_tag generate_dhl_label_api_order_shipment_path(@order, shipment), url:  generate_dhl_label_api_order_shipment_path(@order, shipment), method: :post, id: 'dhl-label-button' do |label_form| %>
           <%= label_tag Spree.t(:label_format) %>
-          <%= select_tag :label_format, options_for_select([["Pdf", "pdf"], ["Zpl", "zpl"]]), class: 'select2 fullwidth'%><br/>
+          <%= select_tag :label_format, options_for_select([["Pdf", "pdf"], ["Zpl", "zpl"]]), class: 'select2 fullwidth'%><br/><br/>
           <%= label_tag Spree.t(:spree_shipping_box_id) %>
-          <%= select_tag :spree_shipping_dhl_box_id, options_for_select(Spree::Shipping::DhlBox.all.collect {|box| [ Spree.t('dhl_box.' + box.description), box.id] }), class: 'select2 fullwidth'%><br/>
+          <%= select_tag :spree_shipping_dhl_box_id, options_for_select(Spree::Shipping::DhlBox.all.collect {|box| [ Spree.t('dhl_box.' + box.description), box.id] }), class: 'select2 fullwidth'%><br/><br/>
+          <%= label_tag Spree.t(:return_label) %>
+          <%= check_box_tag :return_label %><br/>
           <%= hidden_field_tag :token, spree_current_user.spree_api_key %>
           <br/>
           <%= submit_tag Spree.t(:generate_new_label) %>

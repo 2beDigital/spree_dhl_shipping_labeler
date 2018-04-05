@@ -6,7 +6,7 @@ Spree::Address.class_eval do
               lastName:      lastname,
               email:         email,
               company:       company,
-              phone_number:  phone,
+              phoneNumber:   phone,
               street:        [address1, address2].compact.join(' '),
               city:          city,
               state:         state,

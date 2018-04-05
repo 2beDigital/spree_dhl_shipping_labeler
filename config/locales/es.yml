@@ -22,6 +22,8 @@ es:
     show_delivery_status: Estado del envío
     show_delivery: Mostrar envío
     label_format: Formato de la etiqueta
+    return_label: ¿Etiqueta para devolución?
+    new_label_for_return: ¿Generar nueva etiqueta para la devolución?
     generate_label_errors:
       code_201: 'Crea una etiqueta. Dependiendo del valor del encabezado Aceptado provisto, los datos de la etiqueta como JSON (en caso de aplicación/json), la etiqueta en formato PDF (en caso de aplicación/pdf), o la etiqueta en formato ZPL (en caso de aplicación/zpl). '
       code_400: 'Error de validación de especificación de etiqueta. Compruebe los datos del cliente y de la localización del almacen.'

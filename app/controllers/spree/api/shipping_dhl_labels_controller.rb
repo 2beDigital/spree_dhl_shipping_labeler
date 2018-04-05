@@ -4,9 +4,9 @@ module Spree
       before_action :find_order
       before_action :find_shipment
       
-      def generate_dhl_label        
-        if @shipment.state != 'shipped'
-          @label = @shipment.build_dhl_label(label_format: params[:label_format],spree_shipping_dhl_box_id: params[:spree_shipping_dhl_box_id])
+      def generate_dhl_label
+        if @shipment.state != 'shipped' || @order.return_authorizations.present?
+          @label = @shipment.build_dhl_label(dhl_labels_params)
           @label.generate_label!
           errors = @label.errors.messages[:generate_label].present? ? @label.errors.messages[:generate_label].first : nil
           if @label.save
@@ -28,7 +28,11 @@ module Spree
 
         def find_shipment
           @shipment = @order.shipments.find_by(number: params[:id])
-        end        
+        end  
+
+        def dhl_labels_params
+          params.permit(:label_format, :spree_shipping_dhl_box_id, :return_label)
+        end      
     end
   end
 end
