@@ -4,7 +4,7 @@ module SpreeDhlShippingLabeler
     require 'uri'
 
     def self.shipment_status(tracker_code)
-      uri = URI.parse("https://api-gw-accept.dhlparcel.nl/track-trace?key=#{tracker_code}")
+      uri = URI.parse("https://api-gw.dhlparcel.nl/track-trace?key=#{tracker_code}")
       request = Net::HTTP::Get.new(uri)
       request["Accept"] = "application/json"      
       req_options = { use_ssl: uri.scheme == "https" }

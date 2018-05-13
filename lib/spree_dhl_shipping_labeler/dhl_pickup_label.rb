@@ -13,7 +13,7 @@ module SpreeDhlShippingLabeler
     end
 
     def get_access_token
-      uri = URI.parse('https://api-gw-accept.dhlparcel.nl/authenticate/api-key')
+      uri = URI.parse('https://api-gw.dhlparcel.nl/authenticate/api-key')
       request = Net::HTTP::Post.new(uri)
       request['accept'] = 'application/json'
       request.body = { userId: credentials[:userId], key: credentials[:key] }.to_json
@@ -23,7 +23,7 @@ module SpreeDhlShippingLabeler
     end
 
     def generate_label
-      uri = URI.parse('https://api-gw-accept.dhlparcel.nl/labels')
+      uri = URI.parse('https://api-gw.dhlparcel.nl/labels')
       request = Net::HTTP::Post.new(uri)
       request['Accept'] = 'application/json'
       request['Authorization'] = "Bearer " + get_access_token
