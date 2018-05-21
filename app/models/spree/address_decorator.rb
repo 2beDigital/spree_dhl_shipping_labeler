@@ -2,7 +2,7 @@ Spree::Address.class_eval do
     def dhl_formatted(email)
             {
               name:          full_name,
-              firtsName:     firstname,
+              firstName:     firstname,
               lastName:      lastname,
               email:         email,
               company:       company,
