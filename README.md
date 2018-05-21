@@ -23,7 +23,22 @@ Or install it yourself as:
     $ gem install spree_dhl_shipping_labeler
 ```
 
+Config your access keys:
+```
+common: &test_environment_settings
+  userId:        'YOUR_USER_KEY_ID_DEVELOPMENT'
+  key:           'YOUR_SECRET_KEY'
+  accountId:     'YOUR_ACCOUNT_ID'
 
+production:
+  userId:        'YOUR_USER_KEY_ID_PRODUCTION'
+  key:           'YOUR_SECRET_KEY_PRODUCTION'
+  accountId:     'YOUR_ACCOUNT_ID'
+
+development:
+  <<: *test_environment_settings
+
+```
 ## Test
 Testing with Rspec
 
