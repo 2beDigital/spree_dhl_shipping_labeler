@@ -55,9 +55,9 @@ module SpreeDhlShippingLabeler
         parcelTypeKey:  package.box.present? ? package.box.description : 'SMALL',
         receiver: {
           name: {
-            firstName: customer[:firstName] ,
-            lastName: customer[:lastName] ,
-            companyName: customer[:companyName] || '' ,
+            firstName: customer[:firstName],
+            lastName: customer[:lastName],
+            companyName: customer[:companyName] || '',
             additionalName: customer[:name] || ''
           },
           address: {
